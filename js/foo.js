@@ -134,15 +134,81 @@
 // }
 // console.log(getMathResult(10, 5));
 
-// const lines = 5;
-// let result = '';
-// for (let i = 0; i <= lines; i++) {
-//     for (let j = 0; j < lines - i; j++) {
-//         result += " ";
-//     }
-//     for (let j = 0; j < 2 * i + 1; j++) {
-//         result += "*";
-//     }
-//     result += "\n";
+//Функция 1 из примера про замыкание
+// let a = 3;
+// function addTwo(x) {
+//     let ret = x + 2;
+//     return ret;
 // }
-// console.log(result);
+// let b = addTwo(a);
+// console.log(b);
+
+//Функция 2 из примера про замыкание
+// let val1 = 2;
+// function multiplyThis(n) {
+//     let ret = n * val1;
+//     return ret;
+// }
+// let multiplied = multiplyThis(6);
+// console.log('example of scope:', multiplied);
+
+//Функция 3 из примера про замыкание (очень важно!)
+// let val = 7;
+// function createAdder() {
+//     function addNumbers(a, b) {
+//         let ret = a + b;
+//         return ret;
+//     }
+//     return addNumbers;
+// }
+// let adder = createAdder();
+// let sum = adder(val, 8);
+// console.log('example of function returning a function: ', sum);
+
+//Функция 4 из примера про замыкание
+
+//Мой опыт по телу функции
+// let sum = 0;
+// const sumNew = function() {
+//     sum = sum + 1;
+//     return sum;
+// };
+
+// const sampleOne = sumNew();
+// const sampleTwo = sumNew();
+// const sampleThree = sumNew();
+// console.log(sumNew(), sampleOne, sampleTwo, sampleThree);
+
+//Функция 4 из примера про замыкание (авторский пример)
+function createCounter() {
+    let counter = 0;
+    const myFunction = function () {
+        counter = counter + 1;
+        return counter;
+    };
+    return myFunction;
+} //8
+
+const increment = createCounter();
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
+console.log(c1, c2, c3, increment());
+
+// Дополнительный пример замыкания
+let c = 4;
+const addX = x => n => n + x;
+const addThree = addX(3);
+let d = addThree(c);
+console.log('example partial application', d);
+
+//пример той же функции без стрелок
+// let c = 4;
+// function addX(x) {
+//     return function (n) {
+//         return n + x;
+//     };
+// }
+// const addThree = addX(3); //Записываем в рюкзак 3
+// let d = addThree(c); //работаем с телом функции им рюкзаком
+// console.log('example partial application', d);
