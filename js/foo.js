@@ -180,27 +180,27 @@
 // console.log(sumNew(), sampleOne, sampleTwo, sampleThree);
 
 //Функция 4 из примера про замыкание (авторский пример)
-function createCounter() {
-    let counter = 0;
-    const myFunction = function () {
-        counter = counter + 1;
-        return counter;
-    };
-    return myFunction;
-} //8
+// function createCounter() {
+//     let counter = 0;
+//     const myFunction = function () {
+//         counter = counter + 1;
+//         return counter;
+//     };
+//     return myFunction;
+// } //8
 
-const increment = createCounter();
-const c1 = increment();
-const c2 = increment();
-const c3 = increment();
-console.log(c1, c2, c3, increment());
+// const increment = createCounter();
+// const c1 = increment();
+// const c2 = increment();
+// const c3 = increment();
+// console.log(c1, c2, c3, increment());
 
 // Дополнительный пример замыкания
-let c = 4;
-const addX = x => n => n + x;
-const addThree = addX(3);
-let d = addThree(c);
-console.log('example partial application', d);
+// let c = 4;
+// const addX = x => n => n + x;
+// const addThree = addX(3);
+// let d = addThree(c);
+// console.log('example partial application', d);
 
 //пример той же функции без стрелок
 // let c = 4;
