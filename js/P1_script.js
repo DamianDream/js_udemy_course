@@ -1,4 +1,72 @@
-"use strict";
+// "use strict";
+'use strict';
+
+// let numberOfFilms;
+
+// function start() {
+//     numberOfFilms = +prompt("сколько фильмов вы посмотрели?", "");
+//     while (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt("сколько фильмов вы посмотрели?", "");
+//     }
+// }
+// start();
+
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     private: false
+// };
+
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt("Какой последний фильм вы посмотрели?", "").trim(),
+//             b = prompt("Как вы оцените фильм");
+//         if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+//             personalMovieDB.movies[a] = b;
+//             console.log("Done");
+//         } else {
+//             console.log("Error");
+//             i--;
+//         }
+//     }
+// }
+
+// rememberMyFilms();
+
+// function detectPersonalLevel() {
+//     if (personalMovieDB.count < 10) {
+//         console.log("Просмотрено довольно мало фильмов");
+//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+//         console.log("Вы классический зритель");
+//     } else if (personalMovieDB.count >= 30) {
+//         console.log("Вы киноман");
+//     } else {
+//         console.log("Произошла ошибка");
+//     }
+// }
+// detectPersonalLevel();
+
+// function showMyDB() {
+//     if (personalMovieDB.private == false) {
+//         console.log(personalMovieDB); 
+//     }   
+// }
+// showMyDB();
+
+// function writeYourGenres() {
+//     for (let i = 0; i < 3; i++) {
+//         personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i +1}?`, "");
+//     }
+// }
+// writeYourGenres();
+
+//----------------------------------
+
+
+
+
 
 /* Задание на урок:
 
@@ -59,40 +127,39 @@
 
 4) Потренироваться и переписать цикл еще двумя способами*/
 
+// const numberOfFilms = +prompt("сколько фильмов вы посмотрели?", "");
 
-const numberOfFilms = +prompt("сколько фильмов вы посмотрели?", "");
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     private: false
+// };
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    private: false
-};
+// if (personalMovieDB.count < 10) {
+//     console.log("Просмотрено довольно мало фильмов");
+// } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+//     console.log("Вы классический зритель");
+// } else if (personalMovieDB.count >= 30) {
+//     console.log("Вы киноман");
+// } else {
+//     console.log("Произошла ошибка");
+// }
 
-if (personalMovieDB.count < 10) {
-    console.log("Просмотрено довольно мало фильмов");
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
-    console.log("Вы классический зритель");
-} else if (personalMovieDB.count >= 30) {
-    console.log("Вы киноман");
-} else {
-    console.log("Произошла ошибка");
-}
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt("Какой последний фильм вы посмотрели?", ""),
+//           b = prompt("Как вы оцените фильм");
+//     if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log("Done");
+//     } else {
+//         console.log("Error");
+//         i--;
+//     }
+// }
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt("Какой последний фильм вы посмотрели?", ""),
-          b = prompt("Как вы оцените фильм");
-    if (a != null && b != null && a != "" && b != "" && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log("Done");
-    } else {
-        console.log("Error");
-        i--;
-    }
-}
-
-console.log(personalMovieDB);
+// console.log(personalMovieDB);
 
 
 // let num = 50;
@@ -172,8 +239,6 @@ console.log(personalMovieDB);
 //         }
 //     }
 // }
-
-"use strict";
 
 /* Задание на урок:
 
@@ -497,4 +562,175 @@ console.log(personalMovieDB);
 //     result += "\n";
 // }
 // console.log(result);
+
+
+////------- Обьекты -----
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function () {
+//         console.log('Test');
+//     }
+// };
+
+// delete options.name;
+// console.log(options['colors']['border']);
+
+// let counter = 0;
+
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let i in options[key]) {
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//             // counter++
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//         // counter++;
+//     }
+// }
+// console.log(counter);
+
+// console.log(Object.keys(options).length);
+
+// const { border, bg } = options.colors; //деструктуризация обьектов
+// console.log(border);
+
+//// -------- Масивы и псевдомасивы ----
+
+// const arr = [1, 2, 3, 6, 8];
+// arr.pop(); // удаляет последний елемент из масива
+// arr.push(10); // добавляет елемент в конец масива
+// console.log(arr);
+
+//  цыкл for для перебора всех елеменстов (Вариант 1)
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// перебор масива с помощью "for of" работает с масивоподобными сущностями
+//отличие данного метода в использовании break and continue
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// метод работы с структоруй масивов for each
+// const arr = [1, 2, 3, 6, 8, 10];
+// arr.forEach(function (item, i, arr) {
+//     console.log(`${i}: ${item} из масива ${arr}`);
+// });
+
+//--sample with split (свормировать масив из строк при помощи разделителя)
+// const str = prompt('', '');
+// const products = str.split(', ');
+// products.sort();
+// console.log(products.join('; '));
+
+// SORT of the arrey
+// const arr = [10, 2, 13, 6, 8, 26];
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b) {
+//     return a - b;
+// }
+
+
+// ----Передача ссылки по значению
+
+// let a = 5,
+//     b = a;
+
+// b = b + 5;
+
+// console.log(a);
+// console.log(b);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const copy = obj; // link to the object
+// copy.a = 10;
+
+// //function for copy the arrey
+// function copy(mainObj) {
+//     let objCopy = {};
+
+//     let key;
+//     for (key in mainObj) {
+//         objCopy[key] = mainObj[key]; 
+//     }
+//     return objCopy;
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 7,
+//     c: 11,
+//     d: {
+//         x: 87,
+//         y: 54
+//     }
+// };
+
+// const newNumbers = copy(numbers);
+// newNumbers.a = 10;
+
+// const add = {
+//     e: 17,
+//     f: 55
+// };
+
+// console.log(numbers);
+// console.log(newNumbers);
+
+// console.log(Object.assign(numbers, add));
+
+// const copyTest = Object.assign({}, add);
+// copyTest.e = 20;
+
+// console.log(add);
+// console.log(copyTest);
+
+//---- создание копии масива (не обьекта)
+
+// const oldArrey = ['a', 'b', 'c'];
+// const newArrey = oldArrey.slice();
+
+// newArrey[1] = 'test';
+
+// console.log(oldArrey);
+// console.log(newArrey);
+
+//-----Operator SPREAD (...)
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blogs = ['wordpress', 'livejournal', 'blogger'],
+//       internet = [...video, ...blogs, 'VK', 'Facebook'];
+
+// console.log(internet);
+
+//Sample via function
+
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// const numFromDB = [2, 5, 7];
+// log(...numFromDB);
+
+//Sample with Spread operator
+
+// const arrayNum = ['a', 'b'];
+// const arrayNumPlus = [...arrayNum];
+
+
 
